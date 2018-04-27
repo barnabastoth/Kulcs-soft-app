@@ -1,0 +1,10 @@
+spring.datasource.url = jdbc:postgresql://localhost:PORT/DATABASE_NAME
+spring.jpa.properties.hibernate.default_schema = public
+spring.datasource.username = USERNAME
+spring.datasource.password = PASSWORD
+spring.jpa.show-sql = true
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto = create-drop
+spring.session.store-type=jdbc
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+server.port = 8089
