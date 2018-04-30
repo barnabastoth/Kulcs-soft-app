@@ -28,13 +28,34 @@
           </q-item-main>
         </q-item>
       </div>
+      <div v-if="$store.state.isLoggedIn === true">
+        <q-item class="main-color cursor-pointer">
+          <q-item-side avatar="statics/guy-avatar.png" />
+          <q-item-main>{{$store.state.loggedInUser.username}}</q-item-main>
+          <q-item-side right>
+            <q-btn
+              aria-label="Kijelentkezés"
+              @click='performLogOut()'
+            >
+              <q-icon title="Kijelentkezés" name="fa-sign-out-alt" inverted color="white">
+                <q-tooltip>Kijelentkezés</q-tooltip>
+              </q-icon>
+            </q-btn>
+          </q-item-side>
+        </q-item>
+      </div>
     </q-toolbar>
   </q-layout-header>
 </template>
 
 <script>
 export default {
-  name: 'topBar'
+  name: 'topBar',
+  methods: {
+    performLogOut () {
+      this.$store.dispatch('logout')
+    }
+  }
 }
 </script>
 

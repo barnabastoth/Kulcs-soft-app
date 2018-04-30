@@ -63,7 +63,8 @@ module.exports = function (ctx) {
         'QInput',
         'QTabs',
         'QTab',
-        'QTabPane'
+        'QTabPane',
+        'QTooltip'
       ],
       directives: [
         'Ripple'
