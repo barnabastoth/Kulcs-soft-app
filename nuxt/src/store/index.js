@@ -63,6 +63,25 @@ const store = new Vuex.Store({
         message: 'Sikeresen kijelentkeztél. Remélem azért még látjuk egymást!'
       })
       this.$router.push('/bejelentkezés')
+    },
+    registration ({ dispatch }, credentials) {
+      return new Promise((resolve, reject) => {
+        AXIOS.post('/api/registration', credentials)
+          .then(response => {
+            dispatch('login', credentials)
+            resolve()
+          })
+          .catch(error => {
+            reject(error)
+            Notify.create({
+              type: 'info',
+              color: 'info',
+              position: 'bottom',
+              timeout: 3000,
+              message: 'A regisztriáció nem sikerült, kérlek ellenőrizd le újra az adataidat.'
+            })
+          })
+      })
     }
   }
 })
