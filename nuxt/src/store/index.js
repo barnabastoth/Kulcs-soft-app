@@ -10,7 +10,7 @@ const LOGOUT = 'LOGOUT'
 
 const store = new Vuex.Store({
   state: {
-    isLoggedIn: !!localStorage.getItem('token'),
+    isLoggedIn: !!localStorage.getItem('Bearer '),
     loggedInUser: []
   },
   mutations: {
@@ -51,6 +51,18 @@ const store = new Vuex.Store({
             reject(error)
           })
       })
+    },
+    logout ({ commit }) {
+      localStorage.removeItem('Bearer ')
+      commit(LOGOUT)
+      Notify.create({
+        type: 'info',
+        color: 'info',
+        position: 'bottom',
+        timeout: 3000,
+        message: 'Sikeresen kijelentkeztél. Remélem azért még látjuk egymást!'
+      })
+      this.$router.push('/bejelentkezés')
     }
   }
 })
