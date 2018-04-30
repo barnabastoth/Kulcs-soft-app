@@ -20,9 +20,9 @@
 </template>
 
 <script>
-    export default {
-        name: "authentication"
-    }
+export default {
+  name: 'authentication'
+}
 </script>
 
 <style scoped>
