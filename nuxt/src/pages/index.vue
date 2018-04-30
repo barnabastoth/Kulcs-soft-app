@@ -1,14 +1,14 @@
 <template>
   <q-page class="flex flex-center">
-    <q-card inline class="q-ma-sm">
+    <q-card inline class="q-ma-sm shadow-24" color="blue-grey-4">
       <q-card-title class="text-center">
-        Kulcs-soft demo application
+        <h7>Kulcs-soft demo application</h7>
       </q-card-title>
       <q-card-media>
         <img src="../statics/programming.png" class="responsive">
       </q-card-media>
       <q-list separator>
-        <q-collapsible icon="explore" label="Az applikáció során felhasznált főbb technológiák">
+        <q-collapsible icon="fa-code" label="Az applikáció során felhasznált főbb technológiák">
           <div>
             <q-list>
               <q-list-header inset>Frontend</q-list-header>
@@ -46,7 +46,7 @@
           </div>
         </q-collapsible>
 
-        <q-collapsible icon="perm_identity" label="A Projekt">
+        <q-collapsible icon="fa-copyright" label="A Projekt">
           <div>
             Az alkalmazás célja:
             <br>
@@ -59,7 +59,7 @@
           </div>
         </q-collapsible>
 
-        <q-collapsible icon="shopping_cart" label="Rólam">
+        <q-collapsible icon="fa-user-secret" label="Rólam">
           <div>
             <img src="../statics/barnabas-toth.png" alt="Barnabás Tóth" class="responsive">
           </div>
