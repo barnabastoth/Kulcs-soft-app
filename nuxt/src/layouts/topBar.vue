@@ -1,7 +1,7 @@
 <template>
   <q-layout-header>
     <q-toolbar
-      color="primary"
+      color="dark"
       :glossy="$q.theme === 'mat'"
       :inverted="$q.theme === 'ios'"
     >
@@ -9,14 +9,14 @@
         flat
         dense
         round
-        @click="leftDrawerOpen = !leftDrawerOpen"
+        @click="$store.dispatch('toggleLeftDrawer')"
         aria-label="Menu"
       >
         <q-icon name="menu" />
       </q-btn>
 
       <q-toolbar-title>
-        Quasar App
+        Kulcs-soft demo application
         <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
       </q-toolbar-title>
       <div class="cursor-pointer" @click="$router.push('/bejelentkezés')" v-if="$store.state.isLoggedIn === false">

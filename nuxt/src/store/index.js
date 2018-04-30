@@ -7,11 +7,13 @@ Vue.use(Vuex)
 
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 const LOGOUT = 'LOGOUT'
+const TOGGLE_LEFT_DRAWER = 'TOGGLE_LEFT_DRAWER'
 
 const store = new Vuex.Store({
   state: {
     isLoggedIn: !!localStorage.getItem('Bearer '),
-    loggedInUser: []
+    loggedInUser: [],
+    leftDrawerOpen: true
   },
   mutations: {
     [LOGIN_SUCCESS] (state, user) {
@@ -21,6 +23,9 @@ const store = new Vuex.Store({
     [LOGOUT] (state) {
       state.isLoggedIn = false
       state.loggedInUser = []
+    },
+    [TOGGLE_LEFT_DRAWER] (state) {
+      state.leftDrawerOpen = !state.leftDrawerOpen
     }
   },
   actions: {
@@ -82,6 +87,9 @@ const store = new Vuex.Store({
             })
           })
       })
+    },
+    toggleLeftDrawer ({ commit }) {
+      commit(TOGGLE_LEFT_DRAWER)
     }
   }
 })
