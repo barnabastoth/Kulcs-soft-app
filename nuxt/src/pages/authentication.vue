@@ -64,7 +64,7 @@ export default {
           self.$router.push('/')
         })
         .catch(() => {
-          self.$router.push('/bejelentkezés')
+          self.$router.push('/bejelentkezes')
         })
     },
     performRegistration () {
@@ -74,7 +74,7 @@ export default {
           self.$router.push('/')
         })
         .catch(() => {
-          self.$router.push('/bejelentkezés')
+          self.$router.push('/bejelentkezes')
         })
     }
   }

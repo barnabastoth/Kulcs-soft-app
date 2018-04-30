@@ -5,7 +5,7 @@ export default [
     component: () => import('layouts/default'),
     children: [
       { path: '', component: () => import('pages/index') },
-      { path: '/bejelentkezés', component: () => import('pages/authentication') },
+      { path: '/bejelentkezes', component: () => import('pages/authentication') },
       { path: '/user-list', component: () => import('pages/user-list') }
     ]
   },

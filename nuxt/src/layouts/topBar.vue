@@ -19,7 +19,7 @@
         Kulcs-soft demo application
         <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
       </q-toolbar-title>
-      <div class="cursor-pointer" @click="$router.push('/bejelentkezés')" v-if="$store.state.isLoggedIn === false">
+      <div class="cursor-pointer" @click="$router.push('/bejelentkezes')" v-if="$store.state.isLoggedIn === false">
         <q-item>
           <q-item-side icon="lock open" inverted color="green" />
           <q-item-main>
