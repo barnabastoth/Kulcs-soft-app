@@ -7,6 +7,7 @@ Vue.use(Vuex)
 
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 const LOGOUT = 'LOGOUT'
+const TOGGLE_LEFT_DRAWER = 'TOGGLE_LEFT_DRAWER'
 
 const store = new Vuex.Store({
   state: {
@@ -22,6 +23,9 @@ const store = new Vuex.Store({
     [LOGOUT] (state) {
       state.isLoggedIn = false
       state.loggedInUser = []
+    },
+    [TOGGLE_LEFT_DRAWER] (state) {
+      state.leftDrawerOpen = !state.leftDrawerOpen
     }
   },
   actions: {
