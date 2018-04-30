@@ -67,7 +67,7 @@ const store = new Vuex.Store({
         timeout: 3000,
         message: 'Sikeresen kijelentkeztél. Remélem azért még látjuk egymást!'
       })
-      this.$router.push('/bejelentkezés')
+      this.$router.push('/bejelentkezes')
     },
     registration ({ dispatch }, credentials) {
       return new Promise((resolve, reject) => {

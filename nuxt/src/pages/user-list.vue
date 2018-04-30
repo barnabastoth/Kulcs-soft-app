@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-center" style="margin-top: 5vw">
     <q-table
       :data="tableData"
       :columns="columns"
@@ -7,7 +7,7 @@
       :selected.sync="selectedUsers"
       row-key="name"
       color="secondary"
-      title="Válaszd ki a törölni kivánt felhasználót(kat)"
+      title="Felhasználók"
     >
       <template slot="top-selection" slot-scope="props">
         <q-btn @click="deleteSelectedUsers()" icon="delete" color="negative" label="Kijelölt felhasználók törlése" class="q-mr-sm" />
