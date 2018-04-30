@@ -19,13 +19,15 @@
         Quasar App
         <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
       </q-toolbar-title>
-      <q-item class="cursor-pointer" @click="$router.push('/bejelentkezés')" v-if="$store.state.isLoggedIn === false">
-        <q-item-side icon="lock open" inverted color="green" />
-        <q-item-main>
-          <q-item-tile label>Belépés</q-item-tile>
-          <q-item-tile sublabel>Regisztráció</q-item-tile>
-        </q-item-main>
-      </q-item>
+      <div class="cursor-pointer" @click="$router.push('/bejelentkezés')" v-if="$store.state.isLoggedIn === false">
+        <q-item>
+          <q-item-side icon="lock open" inverted color="green" />
+          <q-item-main>
+            <q-item-tile label>Belépés</q-item-tile>
+            <q-item-tile sublabel>Regisztráció</q-item-tile>
+          </q-item-main>
+        </q-item>
+      </div>
     </q-toolbar>
   </q-layout-header>
 </template>

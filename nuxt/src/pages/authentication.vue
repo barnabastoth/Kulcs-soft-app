@@ -8,9 +8,9 @@
             :class="`bg-black`"
           >
           </div>
-          <q-input float-label="Felhasználónév" inverted color="primary" type="email" :before="[{icon: 'fa-address-card', handler () {}}]"/>
+          <q-input float-label="Felhasználónév" v-model="login.userName" inverted color="primary" type="text" :before="[{icon: 'fa-address-card', handler () {}}]"/>
           <br>
-          <q-input float-label="Jelszó" inverted color="primary" type="password" :before="[{icon: 'fa-key'}]" :after="[{icon: 'done', condition: login.password.length >= 5, handler () {}}]" />
+          <q-input float-label="Email cím" v-model="login.userEmail" inverted color="primary" type="email" :before="[{icon: 'fa-envelope', handler () {}}]" />
           <br>
           <q-btn color="primary" icon-right="fa-sign-in-alt" label="Bejelentkezés" />
         </div>
@@ -21,7 +21,15 @@
 
 <script>
 export default {
-  name: 'authentication'
+  name: 'authentication',
+  data: function () {
+    return {
+      login: {
+        userName: '',
+        userEmail: ''
+      }
+    }
+  }
 }
 </script>
 

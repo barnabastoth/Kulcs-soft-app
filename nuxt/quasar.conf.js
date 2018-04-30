@@ -11,10 +11,10 @@ module.exports = function (ctx) {
     ],
     extras: [
       ctx.theme.mat ? 'roboto-font' : null,
-      'material-icons'
-      // 'ionicons',
-      // 'mdi',
-      // 'fontawesome'
+      'material-icons',
+      'ionicons',
+      'mdi',
+      'fontawesome'
     ],
     supportIE: true,
     vendor: {
@@ -59,7 +59,8 @@ module.exports = function (ctx) {
         'QItem',
         'QItemMain',
         'QItemSide',
-        'QItemTile'
+        'QItemTile',
+        'QInput'
       ],
       directives: [
         'Ripple'
