@@ -6,6 +6,7 @@ import AXIOS from 'axios'
 Vue.use(Vuex)
 
 const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+const LOGOUT = 'LOGOUT'
 
 const store = new Vuex.Store({
   state: {
@@ -16,6 +17,10 @@ const store = new Vuex.Store({
     [LOGIN_SUCCESS] (state, user) {
       state.isLoggedIn = true
       state.loggedInUser = user
+    },
+    [LOGOUT] (state) {
+      state.isLoggedIn = false
+      state.loggedInUser = []
     }
   },
   actions: {
