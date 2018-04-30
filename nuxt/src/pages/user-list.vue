@@ -52,6 +52,18 @@ export default {
     ],
     tableData: []
   }),
+  created () {
+    AXIOS.get('/api/user/')
+      .then(response => {
+        for (let i = 0; i < response.data.length; i++) {
+          let user = {}
+          user['name'] = response.data[i].id
+          user['userName'] = response.data[i].userName
+          user['userEmail'] = response.data[i].userEmail
+          this.$data.tableData.push(user)
+        }
+      })
+  },
   methods: {
     deleteSelectedUsers () {
       for (let i = 0; i < this.$data.selectedUsers.length; i++) {
