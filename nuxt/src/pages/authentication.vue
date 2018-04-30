@@ -66,6 +66,16 @@ export default {
         .catch(() => {
           self.$router.push('/bejelentkezés')
         })
+    },
+    performRegistration () {
+      let self = this
+      this.$store.dispatch('registration', {'userName': this.$data.registration.userName, 'userEmail': this.$data.login.userEmail})
+        .then(() => {
+          self.$router.push('/')
+        })
+        .catch(() => {
+          self.$router.push('/bejelentkezés')
+        })
     }
   }
 }
