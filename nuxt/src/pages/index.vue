@@ -59,9 +59,9 @@
           </div>
         </q-collapsible>
 
-        <q-collapsible icon="shopping_cart" label="Third">
+        <q-collapsible icon="shopping_cart" label="Rólam">
           <div>
-            Lorem ipsum dolor sit amet...
+            <img src="../statics/barnabas-toth.png" alt="Barnabás Tóth" class="responsive">
           </div>
         </q-collapsible>
       </q-list>
