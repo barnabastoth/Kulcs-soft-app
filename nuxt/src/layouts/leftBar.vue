@@ -1,6 +1,6 @@
 <template>
   <q-layout-drawer
-    v-model="leftDrawerOpen"
+    v-model="$store.state.leftDrawerOpen"
     :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
   >
     <q-list
