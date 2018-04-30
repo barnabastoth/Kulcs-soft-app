@@ -87,6 +87,9 @@ const store = new Vuex.Store({
             })
           })
       })
+    },
+    toggleLeftDrawer ({ commit }) {
+      commit(TOGGLE_LEFT_DRAWER)
     }
   }
 })
