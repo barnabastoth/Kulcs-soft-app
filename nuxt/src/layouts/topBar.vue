@@ -9,7 +9,7 @@
         flat
         dense
         round
-        @click="leftDrawerOpen = !leftDrawerOpen"
+        @click="$store.dispatch('toggleLeftDrawer')"
         aria-label="Menu"
       >
         <q-icon name="menu" />
