@@ -7,9 +7,6 @@
       <q-card-media>
         <img src="../statics/programming.png" class="responsive">
       </q-card-media>
-      <q-card-title>
-        Pár szó a projektről
-      </q-card-title>
       <q-list separator>
         <q-collapsible icon="explore" label="Az applikáció során felhasznált főbb technológiák">
           <div>
@@ -49,9 +46,16 @@
           </div>
         </q-collapsible>
 
-        <q-collapsible icon="perm_identity" label="Second">
+        <q-collapsible icon="perm_identity" label="A Projekt">
           <div>
-            Lorem ipsum dolor sit amet...
+            Az alkalmazás célja:
+            <br>
+            egy demo applikáció a Kulcs-soft-hoz való jelentkezéshez.
+            <br>
+            <br>
+            Értelme:
+            <br>
+            Általam legutóbb használt technológiák bemutatása, kódolási stílusom megismertetése.
           </div>
         </q-collapsible>
 
