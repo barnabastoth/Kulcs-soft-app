@@ -11,7 +11,8 @@ const LOGOUT = 'LOGOUT'
 const store = new Vuex.Store({
   state: {
     isLoggedIn: !!localStorage.getItem('Bearer '),
-    loggedInUser: []
+    loggedInUser: [],
+    leftDrawerOpen: true
   },
   mutations: {
     [LOGIN_SUCCESS] (state, user) {
