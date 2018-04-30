@@ -12,7 +12,7 @@
           <br>
           <q-input float-label="Email cím" v-model="login.userEmail" inverted color="primary" type="email" :before="[{icon: 'fa-envelope', handler () {}}]" />
           <br>
-          <q-btn color="primary" icon-right="fa-sign-in-alt" label="Bejelentkezés" />
+          <q-btn color="primary" icon-right="fa-sign-in-alt" @click="performLogin()" label="Bejelentkezés" />
         </div>
       </q-page>
     </q-page-container>
@@ -28,6 +28,18 @@ export default {
         userName: '',
         userEmail: ''
       }
+    }
+  },
+  methods: {
+    performLogin () {
+      let self = this
+      this.$store.dispatch('login', {'userName': this.$data.login.userName, 'userEmail': this.$data.login.userEmail})
+        .then(() => {
+          self.$router.push('/')
+        })
+        .catch(() => {
+          self.$router.push('/bejelentkezés')
+        })
     }
   }
 }
