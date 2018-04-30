@@ -3,6 +3,7 @@
     v-model="$store.state.leftDrawerOpen"
     :content-class="$q.theme === 'mat' ? 'bg-grey-2' : null"
   >
+    <img alt="Quasar logo" src="../statics/kulcs-soft-logo.png" class="responsive" style="max-width: 80%; margin: 10%">
     <q-list
       no-border
       link
