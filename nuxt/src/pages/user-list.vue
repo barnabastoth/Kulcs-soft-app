@@ -67,7 +67,7 @@ export default {
   methods: {
     deleteSelectedUsers () {
       for (let i = 0; i < this.$data.selectedUsers.length; i++) {
-        AXIOS.post('/api/deleteUser', this.$data.selectedUsers[i])
+        AXIOS.post('/api/user/' + this.$data.selectedUsers[i].name + '/deleteUser')
           .then(() => {
             Notify.create({
               type: 'positive',
@@ -79,11 +79,11 @@ export default {
           })
           .catch(() => {
             Notify.create({
-              type: 'positive',
-              color: 'positive',
+              type: 'info',
+              color: 'info',
               position: 'bottom',
               timeout: 3000,
-              message: 'Sikeresen törölted a következő felhasználót: ' + this.$data.selectedUsers[i].userName
+              message: 'A következő felhasználó törlése sikertelen volt: ' + this.$data.selectedUsers[i].userName
             })
           })
       }
