@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
@@ -18,6 +19,7 @@ public class UserController {
     @GetMapping("/user")
     public List<User> listAllUser(){ return userService.findAll(); }
 
+    @Transactional
     @GetMapping("/user/{id}/deleteUser")
     public ResponseEntity<?> deleteUser(@PathVariable("id") Long id) {
         if(userService.findById(id) != null) {

@@ -16,7 +16,7 @@
       </q-btn>
 
       <q-toolbar-title>
-        Kulcs-soft demo application
+        Kulcs-Soft demo application
         <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
       </q-toolbar-title>
       <div class="cursor-pointer" @click="$router.push('/bejelentkezes')" v-if="$store.state.isLoggedIn === false">
@@ -31,7 +31,7 @@
       <div v-if="$store.state.isLoggedIn === true">
         <q-item class="main-color cursor-pointer">
           <q-item-side avatar="statics/guy-avatar.png" />
-          <q-item-main>{{$store.state.loggedInUser.username}}</q-item-main>
+          <q-item-main>{{$store.state.loggedInUser.userName}}</q-item-main>
           <q-item-side right>
             <q-btn
               aria-label="Kijelentkezés"

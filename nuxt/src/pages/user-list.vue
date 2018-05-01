@@ -1,19 +1,25 @@
 <template>
-  <div class="flex flex-center" style="margin-top: 5vw">
-    <q-table
-      :data="tableData"
-      :columns="columns"
-      selection="multiple"
-      :selected.sync="selectedUsers"
-      row-key="name"
-      color="secondary"
-      title="Felhasználók"
-    >
-      <template slot="top-selection" slot-scope="props">
-        <q-btn @click="deleteSelectedUsers()" icon="delete" color="negative" label="Kijelölt felhasználók törlése" class="q-mr-sm" />
-      </template>
-    </q-table>
-  </div>
+  <transition
+    appear
+    enter-active-class="animated zoomIn"
+    leave-active-class="animated zoomOut"
+  >
+    <div class="flex flex-center" style="margin-top: 5vw">
+      <q-table
+        :data="tableData"
+        :columns="columns"
+        selection="multiple"
+        :selected.sync="selectedUsers"
+        row-key="name"
+        color="secondary"
+        title="Felhasználók"
+      >
+        <template slot="top-selection" slot-scope="props">
+          <q-btn @click="deleteSelectedUsers()" icon="delete" color="negative" label="Kijelölt felhasználók törlése" class="q-mr-sm" />
+        </template>
+      </q-table>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -57,7 +63,7 @@ export default {
       .then(response => {
         for (let i = 0; i < response.data.length; i++) {
           let user = {}
-          user['name'] = response.data[i].id
+          user['name'] = response.data[i].userId
           user['userName'] = response.data[i].userName
           user['userEmail'] = response.data[i].userEmail
           this.$data.tableData.push(user)
@@ -66,26 +72,36 @@ export default {
   },
   methods: {
     deleteSelectedUsers () {
-      for (let i = 0; i < this.$data.selectedUsers.length; i++) {
-        AXIOS.post('/api/deleteUser', this.$data.selectedUsers[i])
-          .then(() => {
-            Notify.create({
-              type: 'positive',
-              color: 'positive',
-              position: 'bottom',
-              timeout: 3000,
-              message: 'Sikeresen törölted a következő felhasználót: ' + this.$data.selectedUsers[i].userName
+      if (this.$store.state.isLoggedIn === true) {
+        for (let i = 0; i < this.$data.selectedUsers.length; i++) {
+          AXIOS.get('/api/user/' + this.$data.selectedUsers[i].name + '/deleteUser')
+            .then(() => {
+              Notify.create({
+                type: 'positive',
+                color: 'positive',
+                position: 'bottom',
+                timeout: 3000,
+                message: 'Sikeresen törölted a következő felhasználót: ' + this.$data.selectedUsers[i].userName
+              })
             })
-          })
-          .catch(() => {
-            Notify.create({
-              type: 'positive',
-              color: 'positive',
-              position: 'bottom',
-              timeout: 3000,
-              message: 'Sikeresen törölted a következő felhasználót: ' + this.$data.selectedUsers[i].userName
+            .catch(() => {
+              Notify.create({
+                type: 'info',
+                color: 'info',
+                position: 'bottom',
+                timeout: 3000,
+                message: 'A következő felhasználó törlése sikertelen volt: ' + this.$data.selectedUsers[i].userName
+              })
             })
-          })
+        }
+      } else {
+        Notify.create({
+          type: 'warning',
+          color: 'warning',
+          position: 'bottom',
+          timeout: 3000,
+          message: 'Csak bejelentkezett felhasználóknak van jogosultsága ehez a művelethez. Kérlek jelentkezz be a jobb fenti ikon segítségével.'
+        })
       }
     }
   }
