@@ -23,6 +23,8 @@ Kulcs-Soft Demo Application
 
 The project was built for my application to Kulcs-Soft. It is a basic Single Page Application with Spring Boot behind it and PostgreSQL database. For more information run the project and read the Homepage
 
+The project took 86 commits + this last one to finish, 12 branches and approximately 14-15 hours of active development.
+
 > About me
 
 My name is Barnabás Tóth, I am a Java Developer, who just finished Codecool, for more detailed information visit the Homepage of the application.
