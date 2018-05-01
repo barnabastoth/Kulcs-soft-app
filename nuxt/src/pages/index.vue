@@ -13,6 +13,45 @@
           <img src="../statics/programming.png" class="responsive">
         </q-card-media>
         <q-list separator>
+          <q-collapsible icon="fa-copyright" label="Az Applikációba -tanulás céljával- fejlesztett extra featurek">
+            <div>
+              <p>
+                Az elmúlt hónapokban sokat foglalkoztam Single Page Application fejlesztéssel saját Projekt miatt,
+                <br>
+                ezért úgy gondoltam, hogy belerakok egy-két extrát a projektbe, pusztán tanulás céljával.
+              </p>
+              <p>Ezek a következők:</p>
+              <ul>
+                <li>
+                  Az alkalmazás fejlesztését teljesen szét szeparáltam frontend és backendre.
+                  <br> Saját magam által írt specifikációk alapján fejlesztettem le a Frontendet anélkül, hogy a Backend meglett volna.
+                  <br> Minimális hibával sikerült vakon lefejleszteni.
+                </li>
+
+                <li>
+                  Az alkalmazás fejlesztését teljesen szét szeparáltam frontend és backendre.
+                  <br> Saját magam által írt specifikációk alapján fejlesztettem le a Frontendet anélkül, hogy a Backend meglett volna.
+                  <br> Minimális hibával sikerült vakon kompatibilisre fejleszteni..
+                </li>
+                <li>Json Web Token alapú Authentikációt fejlesztettem az alkalmazásba.</li>
+                <li>User felvitel Regisztrációval lehetséges.</li>
+                <li>Userből lehet egyszerre egy vagy többet is törölni.</li>
+                <li>User törléshez bejelentkezés szükséges.</li>
+                <li>Index oldal</li>
+                <li>Vállalható design</li>
+              </ul>
+              <p>
+
+              </p>
+              <p>
+
+              </p>
+              <p>
+
+              </p>
+
+            </div>
+          </q-collapsible>
           <q-collapsible icon="fa-code" label="Az applikáció során felhasznált főbb technológiák">
             <div>
               <q-list>
@@ -48,19 +87,6 @@
                   <q-item-main label="Hibernate" />
                 </q-item>
               </q-list>
-            </div>
-          </q-collapsible>
-
-          <q-collapsible icon="fa-copyright" label="A Projekt">
-            <div>
-              Az alkalmazás célja:
-              <br>
-              egy demo applikáció a Kulcs-soft-hoz való jelentkezéshez.
-              <br>
-              <br>
-              Értelme:
-              <br>
-              Általam legutóbb használt technológiák bemutatása, kódolási stílusom megismertetése.
             </div>
           </q-collapsible>
 
