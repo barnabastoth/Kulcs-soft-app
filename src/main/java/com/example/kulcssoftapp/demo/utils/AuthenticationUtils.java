@@ -1,5 +1,6 @@
 package com.example.kulcssoftapp.demo.utils;
 
+import com.example.kulcssoftapp.demo.model.RegisterUser;
 import com.example.kulcssoftapp.demo.model.User;
 import com.example.kulcssoftapp.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
