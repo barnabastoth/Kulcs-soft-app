@@ -1,6 +1,7 @@
 package com.example.kulcssoftapp.demo.service;
 
 import com.example.kulcssoftapp.demo.model.User;
+import com.example.kulcssoftapp.demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -38,17 +39,12 @@ public class UserServiceImpl implements UserDetailsService, UserService {
     }
 
     @Override
-    public User getLatestUser() {
-        return userRepository.findLatestUser();
+    public void delete(long userId) {
+        userRepository.deleteByUserId(userId);
     }
 
     @Override
-    public void delete(long id) {
-        userRepository.delete(id);
-    }
-
-    @Override
-    public User findByUsername(String username) {
+    public User findByUserName(String username) {
         return userRepository.findByUserName(username);
     }
 
@@ -59,7 +55,7 @@ public class UserServiceImpl implements UserDetailsService, UserService {
 
     @Override
     public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
+        return userRepository.findByUserEmail(email);
     }
 
     @Override
