@@ -61,6 +61,19 @@ public class AuthenticationController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
+    @PostMapping("/me")
+    public ResponseEntity<?> resourceServer(@RequestBody String token) {
+        System.out.println(token);
+        if(token != null) {
+            User user = userService.findByUserName(jwtTokenUtil.getUsernameFromToken(token));
+            String userName = user.getUserName();
+            System.out.println(userName);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        }
+        return new ResponseEntity<>( HttpStatus.BAD_REQUEST);
+
+    }
+
 
 
 }
