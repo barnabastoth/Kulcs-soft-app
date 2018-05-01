@@ -7,7 +7,7 @@
     <q-page class="flex flex-center">
       <q-card inline class="q-ma-sm shadow-24" color="blue-grey-4">
         <q-card-title class="text-center">
-          <h7>Kulcs-soft demo application</h7>
+          <h7>Kulcs-Soft Demo App</h7>
         </q-card-title>
         <q-card-media>
           <img src="../statics/programming.png" class="responsive">

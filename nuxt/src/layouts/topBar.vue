@@ -16,7 +16,7 @@
       </q-btn>
 
       <q-toolbar-title>
-        Kulcs-soft demo application
+        Kulcs-Soft demo application
         <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
       </q-toolbar-title>
       <div class="cursor-pointer" @click="$router.push('/bejelentkezes')" v-if="$store.state.isLoggedIn === false">
