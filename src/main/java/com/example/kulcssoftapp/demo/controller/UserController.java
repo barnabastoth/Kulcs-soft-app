@@ -19,9 +19,12 @@ public class UserController {
     public List<User> listAllUser(){ return userService.findAll(); }
 
     @GetMapping("/user/{id}/deleteUser")
-    public ResponseEntity<?> deleteUsers(@PathVariable("id") Long id) {
-        userService.delete(id);
-        return new ResponseEntity<>( HttpStatus.OK);
+    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id) {
+        if(userService.findById(id) != null) {
+            userService.delete(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
 
