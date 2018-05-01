@@ -66,26 +66,36 @@ export default {
   },
   methods: {
     deleteSelectedUsers () {
-      for (let i = 0; i < this.$data.selectedUsers.length; i++) {
-        AXIOS.get('/api/user/' + this.$data.selectedUsers[i].name + '/deleteUser')
-          .then(() => {
-            Notify.create({
-              type: 'positive',
-              color: 'positive',
-              position: 'bottom',
-              timeout: 3000,
-              message: 'Sikeresen törölted a következő felhasználót: ' + this.$data.selectedUsers[i].userName
+      if (this.$store.isLoggedIn === true) {
+        for (let i = 0; i < this.$data.selectedUsers.length; i++) {
+          AXIOS.get('/api/user/' + this.$data.selectedUsers[i].name + '/deleteUser')
+            .then(() => {
+              Notify.create({
+                type: 'positive',
+                color: 'positive',
+                position: 'bottom',
+                timeout: 3000,
+                message: 'Sikeresen törölted a következő felhasználót: ' + this.$data.selectedUsers[i].userName
+              })
             })
-          })
-          .catch(() => {
-            Notify.create({
-              type: 'info',
-              color: 'info',
-              position: 'bottom',
-              timeout: 3000,
-              message: 'A következő felhasználó törlése sikertelen volt: ' + this.$data.selectedUsers[i].userName
+            .catch(() => {
+              Notify.create({
+                type: 'info',
+                color: 'info',
+                position: 'bottom',
+                timeout: 3000,
+                message: 'A következő felhasználó törlése sikertelen volt: ' + this.$data.selectedUsers[i].userName
+              })
             })
-          })
+        }
+      } else {
+        Notify.create({
+          type: 'warning',
+          color: 'warning',
+          position: 'bottom',
+          timeout: 3000,
+          message: 'Csak bejelentkezett felhasználóknak van jogosultsága ehez a művelethez. Kérlek jelentkezz be a jobb fenti ikon segítségével.'
+        })
       }
     }
   }
