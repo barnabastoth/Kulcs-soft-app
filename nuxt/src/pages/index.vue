@@ -25,12 +25,6 @@
                 <li>
                   Az alkalmazás fejlesztését teljesen szét szeparáltam frontend és backendre.
                   <br> Saját magam által írt specifikációk alapján fejlesztettem le a Frontendet anélkül, hogy a Backend meglett volna.
-                  <br> Minimális hibával sikerült vakon lefejleszteni.
-                </li>
-
-                <li>
-                  Az alkalmazás fejlesztését teljesen szét szeparáltam frontend és backendre.
-                  <br> Saját magam által írt specifikációk alapján fejlesztettem le a Frontendet anélkül, hogy a Backend meglett volna.
                   <br> Minimális hibával sikerült vakon kompatibilisre fejleszteni..
                 </li>
                 <li>Json Web Token alapú Authentikációt fejlesztettem az alkalmazásba.</li>
@@ -40,16 +34,6 @@
                 <li>Index oldal</li>
                 <li>Vállalható design</li>
               </ul>
-              <p>
-
-              </p>
-              <p>
-
-              </p>
-              <p>
-
-              </p>
-
             </div>
           </q-collapsible>
           <q-collapsible icon="fa-code" label="Az applikáció során felhasznált főbb technológiák">
