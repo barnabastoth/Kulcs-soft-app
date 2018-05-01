@@ -16,7 +16,7 @@
             <br>
             <q-input float-label="Felhasználónév" v-model="login.userName" inverted color="primary" type="text" :before="[{icon: 'fa-address-card', handler () {}}]"/>
             <br>
-            <q-input float-label="Email cím" v-model="login.userEmail" inverted color="primary" type="email" :before="[{icon: 'fa-envelope', handler () {}}]" />
+            <q-input float-label="Jelszó" v-model="login.password" inverted color="primary" type="password" :before="[{icon: 'fa-key', handler () {}}]" />
             <br>
             <q-btn color="primary" icon-right="fa-sign-in-alt" @click="performLogin()" label="Bejelentkezés" />
           </q-tab-pane>
@@ -33,6 +33,8 @@
             <br>
             <q-input float-label="Email cím" v-model="registration.userEmail" inverted color="primary" type="email" :before="[{icon: 'fa-envelope', handler () {}}]" />
             <br>
+            <q-input float-label="Jelszó" v-model="registration.password" inverted color="primary" type="password" :before="[{icon: 'fa-key', handler () {}}]" />
+            <br>
             <q-btn color="primary" icon-right="fa-sign-in-alt" @click="performRegistration()" label="Regisztráció" />
           </q-tab-pane>
         </q-tabs>
@@ -48,18 +50,19 @@ export default {
     return {
       login: {
         userName: '',
-        userEmail: ''
+        password: ''
       },
       registration: {
         userName: '',
-        userEmail: ''
+        userEmail: '',
+        password: ''
       }
     }
   },
   methods: {
     performLogin () {
       let self = this
-      this.$store.dispatch('login', {'userName': this.$data.login.userName, 'userEmail': this.$data.login.userEmail})
+      this.$store.dispatch('login', {'userName': this.$data.login.userName, 'password': this.$data.login.password})
         .then(() => {
           self.$router.push('/')
         })
@@ -69,7 +72,7 @@ export default {
     },
     performRegistration () {
       let self = this
-      this.$store.dispatch('registration', {'userName': this.$data.registration.userName, 'userEmail': this.$data.login.userEmail})
+      this.$store.dispatch('registration', {'userName': this.$data.registration.userName, 'userEmail': this.$data.registration.userEmail, 'password': this.$data.registration.password})
         .then(() => {
           self.$router.push('/')
         })
