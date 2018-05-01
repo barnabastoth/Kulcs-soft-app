@@ -57,7 +57,7 @@ export default {
       .then(response => {
         for (let i = 0; i < response.data.length; i++) {
           let user = {}
-          user['name'] = response.data[i].id
+          user['name'] = response.data[i].userId
           user['userName'] = response.data[i].userName
           user['userEmail'] = response.data[i].userEmail
           this.$data.tableData.push(user)
@@ -67,7 +67,7 @@ export default {
   methods: {
     deleteSelectedUsers () {
       for (let i = 0; i < this.$data.selectedUsers.length; i++) {
-        AXIOS.post('/api/user/' + this.$data.selectedUsers[i].name + '/deleteUser')
+        AXIOS.get('/api/user/' + this.$data.selectedUsers[i].name + '/deleteUser')
           .then(() => {
             Notify.create({
               type: 'positive',
