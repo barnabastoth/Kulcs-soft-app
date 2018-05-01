@@ -1,19 +1,25 @@
 <template>
-  <div class="flex flex-center" style="margin-top: 5vw">
-    <q-table
-      :data="tableData"
-      :columns="columns"
-      selection="multiple"
-      :selected.sync="selectedUsers"
-      row-key="name"
-      color="secondary"
-      title="Felhasználók"
-    >
-      <template slot="top-selection" slot-scope="props">
-        <q-btn @click="deleteSelectedUsers()" icon="delete" color="negative" label="Kijelölt felhasználók törlése" class="q-mr-sm" />
-      </template>
-    </q-table>
-  </div>
+  <transition
+    appear
+    enter-active-class="animated zoomIn"
+    leave-active-class="animated zoomOut"
+  >
+    <div class="flex flex-center" style="margin-top: 5vw">
+      <q-table
+        :data="tableData"
+        :columns="columns"
+        selection="multiple"
+        :selected.sync="selectedUsers"
+        row-key="name"
+        color="secondary"
+        title="Felhasználók"
+      >
+        <template slot="top-selection" slot-scope="props">
+          <q-btn @click="deleteSelectedUsers()" icon="delete" color="negative" label="Kijelölt felhasználók törlése" class="q-mr-sm" />
+        </template>
+      </q-table>
+    </div>
+  </transition>
 </template>
 
 <script>
