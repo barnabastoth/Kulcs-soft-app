@@ -3,9 +3,9 @@ package com.example.kulcssoftapp.demo.controller;
 import com.example.kulcssoftapp.demo.model.User;
 import com.example.kulcssoftapp.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,8 +15,14 @@ public class UserController {
 
     @Autowired UserService userService;
 
-    @RequestMapping(value="/user", method = RequestMethod.GET)
-    public List<User> listUser(){ return userService.findAll(); }
+    @GetMapping("/user")
+    public List<User> listAllUser(){ return userService.findAll(); }
+
+    @GetMapping("/user/{id}/deleteUser")
+    public ResponseEntity<?> deleteUsers(@PathVariable("id") Long id) {
+        userService.delete(id);
+        return new ResponseEntity<>( HttpStatus.OK);
+    }
 
 
 
