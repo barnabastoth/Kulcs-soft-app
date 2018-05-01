@@ -31,7 +31,7 @@
       <div v-if="$store.state.isLoggedIn === true">
         <q-item class="main-color cursor-pointer">
           <q-item-side avatar="statics/guy-avatar.png" />
-          <q-item-main>{{$store.state.loggedInUser.username}}</q-item-main>
+          <q-item-main>{{$store.state.loggedInUser.userName}}</q-item-main>
           <q-item-side right>
             <q-btn
               aria-label="Kijelentkezés"
