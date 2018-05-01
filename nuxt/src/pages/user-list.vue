@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     deleteSelectedUsers () {
-      if (this.$store.isLoggedIn === true) {
+      if (this.$store.state.isLoggedIn === true) {
         for (let i = 0; i < this.$data.selectedUsers.length; i++) {
           AXIOS.get('/api/user/' + this.$data.selectedUsers[i].name + '/deleteUser')
             .then(() => {
