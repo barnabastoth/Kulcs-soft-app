@@ -1,5 +1,6 @@
 package com.example.kulcssoftapp.demo.config;
 
+import com.example.kulcssoftapp.demo.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -45,7 +46,7 @@ public class JwtTokenUtil implements Serializable {
     }
 
     public String generateToken(User user) {
-        return doGenerateToken(user.getUsername());
+        return doGenerateToken(user.getUserName());
     }
 
     private String doGenerateToken(String subject) {
@@ -55,7 +56,7 @@ public class JwtTokenUtil implements Serializable {
 
         return Jwts.builder()
                 .setClaims(claims)
-                .setIssuer("http://devglan.com")
+                .setIssuer("http://kulcs-soft-demo-app.com")
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + ACCESS_TOKEN_VALIDITY_SECONDS*1000))
                 .signWith(SignatureAlgorithm.HS256, SIGNING_KEY)
